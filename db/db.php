@@ -4,7 +4,7 @@ class db {
     private $pdo;
 
     public function __construct() {
-        require $_SERVER['DOCUMENT_ROOT'].'/ReservasHoteles/config/config.php';
+        require $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
         
         try {
             $this->pdo = new PDO("mysql:host=$host;dbname=$dbname", $usuario, $pwd);

@@ -1,3 +1,7 @@
+<?php
+require $_SERVER['DOCUMENT_ROOT'].'/cabecera.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -11,3 +15,7 @@
         ?>
     </body>
 </html>
+
+<?php
+require $_SERVER['DOCUMENT_ROOT'].'/footer.php';
+?>

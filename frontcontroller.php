@@ -1,9 +1,13 @@
 <?php
 
+include $_SERVER['DOCUMENT_ROOT'].'/controllers/usersController.php';
+include $_SERVER['DOCUMENT_ROOT'].'/models/usersModel.php';
+include $_SERVER['DOCUMENT_ROOT'].'/views/usersView.php';
+
 // Define la acción por defecto
-define('ACCION_DEFECTO', 'listar');
+define('ACCION_DEFECTO', 'viewLogin');
 // Define el controlador por defecto
-define('CONTROLADOR_DEFECTO', 'Tareas');
+define('CONTROLADOR_DEFECTO', 'users');
 // Comprueba la acción a realizar, que llegará en la petición.
 // Si no hay acción a realizar lanzará la acción por defecto, que es listar
 // Y se carga la acción, llama a la función cargarAccion
