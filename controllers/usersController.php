@@ -10,58 +10,32 @@ class usersController {
         $this->view = new usersView();
     }
 
-    public function viewLogin() {
-        $users = $this->model->getAllUsers();
-
-        $this->view->login($users);
-    }
-
     /**
-     * Muestra un saludo al usuario
+     * Mostrar la función de login
      */
-    public function saludo() {
-        if (isset($_SESSION['user'])){
-            $user = $_SESSION['user'];
-            echo '<h1>Bienvenid@ '. $user .'</h1>';
-        }
+
+    public function viewLogin() {
+        $sesion = true;
+        $this->view->login($sesion);
     }
 
     /**
      * Comprobar los datos introducidos en el formulario
      */
     public function verificarDatos() {
-        $username = $_POST['username'];
-        $pass = $_POST['pass'];
-
         //Devolver los datos de los usuarios
-        $users = $this->model->getAllUsers();
+        $user = $this->model->getAllUsers($_POST['username'], $_POST['pass']);
 
-        //Variable para comprobar la sesión
-        $sesion = true;
+        if ($user == false) {
+            $this->cerrarSesion();
+            $this->view->login($user);
+        } else {
+            //Obtener el nombre del usuario
+            $u = $this->model->getUsername($_POST['username']);
 
-        foreach ($users as $user) {
-            //Comprobar los datos introducidos
-            if ($user['nombre'] == $username && $user['contraseña'] == $pass) {
-                $sesion = true;
-            }
-
-            //Inicio de sesión
-            if ($sesion == true) {
-                $_SESSION['user'] = true;
-
-                //Obtener el nombre del usuario
-                $u = $this->model->getUsername($username);
-
-                //Redireccionar
-                header("Location: index.php?controller=users&action=saludo");
-            } 
-
-            //Si no se ha iniciado la sesión
-            if ($sesion == false) {
-                $this->cerrarSesion();
-                $this->view->login($sesion);
-            } 
-        }       
+            //Redireccionar
+            header("Location: index.php?controller=hoteles&action=mostrarHoteles");
+        }    
     }
 
     /**
@@ -71,8 +45,6 @@ class usersController {
         //Cookie para la última hora de conexión
         $fecha = date("d/m/Y | H:i:s");
         setcookie("fecha", $fecha, time() + 3600 * 24);
-
-        //setcookie("username", $username, time() - 3601);
 
         //Eliminar la sesión
         session_destroy();

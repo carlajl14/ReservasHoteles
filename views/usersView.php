@@ -4,12 +4,7 @@ class usersView {
     /**
      * Mostrar el login y comprobar si hay error al verificar
      */
-    public function login($booleano) {
-        //Comprobar si los datos son correctos
-        if ($booleano == false) {
-            echo '<p>Usuario o contraseña incorrectos</p>';
-        }
-
+    public function login($booleano = true) {
         echo '<div class="container">';
         echo '<div class="square">';
         echo '<i style="--clr:#00ff0a;"></i>';
@@ -28,6 +23,10 @@ class usersView {
         echo '</div>';
         echo '<div class="inputBX">';
         echo '<button class="button" type="submit" name="login">Iniciar Sesión</button>';
+        //Comprobar si los datos son correctos
+        if ($booleano == false) {
+            echo '<p class=text-white">Usuario o contraseña incorrectos</p>';
+        }
         echo '</div>';
         echo '</form>';
         echo '</div>';

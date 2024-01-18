@@ -4,6 +4,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/controllers/usersController.php';
 include $_SERVER['DOCUMENT_ROOT'].'/models/usersModel.php';
 include $_SERVER['DOCUMENT_ROOT'].'/views/usersView.php';
 
+include $_SERVER['DOCUMENT_ROOT'].'/controllers/hotelesController.php';
+include $_SERVER['DOCUMENT_ROOT'].'/models/hotelesModel.php';
+include $_SERVER['DOCUMENT_ROOT'].'/views/hotelesView.php';
+
 // Define la acción por defecto
 define('ACCION_DEFECTO', 'viewLogin');
 // Define el controlador por defecto

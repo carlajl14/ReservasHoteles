@@ -8,15 +8,17 @@ class usersModel {
     private $pdo;
 
     public function __construct() {
-        $this->bd =new DB();
+        $this->bd = new DB();
         $this->pdo = $this->bd->getPDO();
     } 
 
     /**
      * Conexión para la base de datos
      */
-    public function getAllUsers() {
-        $stmt = $this->pdo->prepare('SELECT * FROM usuarios');
+    public function getAllUsers($username, $pass) {
+        $stmt = $this->pdo->prepare('SELECT * FROM usuarios WHERE nombre = ? AND contraseña = sha2(?, 256)');
+        $stmt->bindParam(1, $username);
+        $stmt->bindParam(2, $pass);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

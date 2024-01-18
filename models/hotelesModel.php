@@ -1,6 +1,6 @@
 <?php
 
-class hotelesView {
+class hotelesModel {
     // Obtiene una instancia de PDO para conectarse a la base de datos
     private $bd;
     private $pdo;
