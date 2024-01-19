@@ -2,34 +2,28 @@
 
 class hotelesView {
 
-    public function tableHoteles($hoteles) {
-        echo '<div class="cont">';
-        echo '<table class="table table-primary">';
-        echo '<thead>';
-        echo '<tr>';
-        echo '<th scope="col">Nombre</th>';
-        echo '<th scope="col">Dirección</th>';
-        echo '<th scope="col">Ciudad</th>';
-        echo '<th scope="col">País</th>';
-        echo '<th scope="col">Habitaciones Disponibles</th>';
-        echo '<th scope="col">Descripción</th>';
-        echo '<th scope="col">Imagen</th>';
-        echo '</tr>';
-        echo '</thead>';
-        echo '<tbody>';
+    /**
+     * Función para mostrar los hoteles
+     */
+    public function viewHoteles($hoteles) {
+        echo '<h1 class="title">Hoteles Disponibles</h1>';
         foreach ($hoteles as $hotel) {
-            echo '<tr>';
-            echo '<td scope="row">'. $hotel['nombre'] .'</td>';
-            echo '<td scope="row">'. $hotel['direccion'] .'</td>';
-            echo '<td scope="row">'. $hotel['ciudad'] .'</td>';
-            echo '<td scope="row">'. $hotel['pais'] .'</td>';
-            echo '<td scope="row">'. $hotel['num_habitaciones'] .'</td>';
-            echo '<td scope="row">'. $hotel['descripcion'] .'</td>';
-            echo '<td scope="row"><img style="width: 50px" src="data:image/jpeg; base64,'.base64_encode($hotel['foto']).'"></td>';
-            echo '</tr>';
+            echo '<section>';
+            echo '<div class="box">';
+            echo '<h2 class="titulo">' . $hotel['nombre'] . '</h2>';
+            echo '<div class="cont">';
+            echo '<div class="imgBx">';
+            echo '<img class="img" src="data:image/jpeg; base64,'.base64_encode($hotel['foto']).'">';
+            echo '</div>';
+            echo '<div class="content">';
+            echo '<p class="info">Dirección: '. $hotel['direccion'] .', '. $hotel['ciudad'] .' ('. $hotel['pais'] .')</p>';
+            echo '<p class="info">Habitaciones disponibles: '. $hotel['num_habitaciones'] .'</p>'; 
+            echo '<p class="info">Descripcioón: '. $hotel['descripcion'] .'</p>'; 
+            echo '<a href="index.php?controller=habitaciones&action=mostrarHabitaciones" class="btn btn-success">Habitaciones Disponibles</a>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</section>';
         }
-        echo '</tbody>';
-        echo '</table>';
-        echo '</div>';
     }
 }

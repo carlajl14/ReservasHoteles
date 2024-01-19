@@ -16,6 +16,6 @@ class hotelesController {
     public function mostrarHoteles() {
         $hoteles = $this->model->getHoteles();
 
-        $this->view->tableHoteles($hoteles);
+        $this->view->viewHoteles($hoteles);
     }
 }

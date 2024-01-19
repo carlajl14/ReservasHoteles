@@ -6,7 +6,7 @@ class hotelesModel {
     private $pdo;
 
     public function __construct() {
-        $this->bd =new DB();
+        $this->bd = new DB();
         $this->pdo = $this->bd->getPDO();
     } 
 
