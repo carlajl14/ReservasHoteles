@@ -1,12 +1,24 @@
 <?php
 
+// Users
 include $_SERVER['DOCUMENT_ROOT'].'/controllers/usersController.php';
 include $_SERVER['DOCUMENT_ROOT'].'/models/usersModel.php';
 include $_SERVER['DOCUMENT_ROOT'].'/views/usersView.php';
 
+// Hoteles
 include $_SERVER['DOCUMENT_ROOT'].'/controllers/hotelesController.php';
 include $_SERVER['DOCUMENT_ROOT'].'/models/hotelesModel.php';
 include $_SERVER['DOCUMENT_ROOT'].'/views/hotelesView.php';
+
+// Habitaciones
+include $_SERVER['DOCUMENT_ROOT'].'/controllers/habitacionesController.php';
+include $_SERVER['DOCUMENT_ROOT'].'/models/habitacionesModel.php';
+include $_SERVER['DOCUMENT_ROOT'].'/views/habitacionesView.php';
+
+// Reservas
+include $_SERVER['DOCUMENT_ROOT'].'/controllers/reservasController.php';
+include $_SERVER['DOCUMENT_ROOT'].'/models/reservasModel.php';
+include $_SERVER['DOCUMENT_ROOT'].'/views/reservasView.php';
 
 // Define la acción por defecto
 define('ACCION_DEFECTO', 'viewLogin');

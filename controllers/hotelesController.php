@@ -14,8 +14,13 @@ class hotelesController {
      * Vista para los hoteles
      */
     public function mostrarHoteles() {
-        $hoteles = $this->model->getHoteles();
+        if (isset($_SESSION['user'])) {
+            $hoteles = $this->model->getHoteles();
 
-        $this->view->viewHoteles($hoteles);
+            $this->view->viewHoteles($hoteles);
+        } else {
+            header("Location: index.php?controller=users&action=cerrarSesion");
+        }
+        
     }
 }

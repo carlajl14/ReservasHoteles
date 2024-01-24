@@ -19,7 +19,10 @@ class hotelesView {
             echo '<p class="info">Dirección: '. $hotel['direccion'] .', '. $hotel['ciudad'] .' ('. $hotel['pais'] .')</p>';
             echo '<p class="info">Habitaciones disponibles: '. $hotel['num_habitaciones'] .'</p>'; 
             echo '<p class="info">Descripcioón: '. $hotel['descripcion'] .'</p>'; 
-            echo '<a href="index.php?controller=habitaciones&action=mostrarHabitaciones" class="btn btn-success">Habitaciones Disponibles</a>';
+            echo '<form method="POST" action="index.php?controller=habitaciones&action=mostrarHabitaciones">
+            <input type="number" name="hotel" hidden value="'. $hotel['id'] .'"/>
+            <button type="submit" name="info" class="btn btn-success">Habitaciones Disponibles</button>';
+            echo '</form>';
             echo '</div>';
             echo '</div>';
             echo '</div>';

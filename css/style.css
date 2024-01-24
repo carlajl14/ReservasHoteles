@@ -112,14 +112,14 @@ input {
     outline: none;
 }
 
-.button {
-    width: 100%;
-    background-color: linear-gradient(45deg, #ff357a, #fff172);
+.boton {
+    position: relative;
+    width: 90%;
     border: none;
     height: 25px;
     border-radius: 10px;
-    cursor: pointer;
     margin-top: 20px;
+    margin-left: 15px;
 }
 
 .date {

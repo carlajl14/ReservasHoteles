@@ -33,6 +33,9 @@ class usersController {
             //Obtener el nombre del usuario
             $u = $this->model->getUsername($_POST['username']);
 
+            //Obtener el id del usuario
+            $i = $this->model->getIdUser($_POST['username']);
+
             //Redireccionar
             header("Location: index.php?controller=hoteles&action=mostrarHoteles");
         }    
@@ -46,10 +49,13 @@ class usersController {
         $fecha = date("d/m/Y | H:i:s");
         setcookie("fecha", $fecha, time() + 3600 * 24);
 
+        //Eliminar la cookie del usuario
+        setcookie("id_user", $_POST['username'], time() - 3601);
+
         //Eliminar la sesión
         session_destroy();
 
         //Redirigir al inicio
-        header("Location: index.php?index.php?controller=users&action=viewLogin");
+        header("Location: index.php?controller=users&action=viewLogin");
     }
 }

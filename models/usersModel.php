@@ -38,4 +38,20 @@ class usersModel {
             $_SESSION['user'] = $user['nombre'];
         }
     }
+
+    /**
+     * Obtener el id del usuario
+     * @param type $username
+     */
+    public function getIdUser($username) {
+        $stmt = $this->pdo->prepare('SELECT * FROM usuarios WHERE nombre = ?');
+        $stmt->bindParam(1, $username);
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        //Recoger el id del usuario
+        foreach ($users as $i) {
+            setcookie("id_user", $i['id'], time() + 3600);
+        }
+    }
 }

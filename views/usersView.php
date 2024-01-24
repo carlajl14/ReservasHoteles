@@ -22,7 +22,7 @@ class usersView {
         echo '<input type="password" name="pass" placeholder="Contraseña" required">';
         echo '</div>';
         echo '<div class="inputBX">';
-        echo '<button class="button" type="submit" name="login">Iniciar Sesión</button>';
+        echo '<button class="boton" type="submit" name="login">Iniciar Sesión</button>';
         //Comprobar si los datos son correctos
         if ($booleano == false) {
             echo '<p class=text-white">Usuario o contraseña incorrectos</p>';
