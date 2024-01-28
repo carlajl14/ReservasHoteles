@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+require $_SERVER['DOCUMENT_ROOT'].'/views/templates/cabecera.php';
+
 // Users
 include $_SERVER['DOCUMENT_ROOT'].'/controllers/usersController.php';
 include $_SERVER['DOCUMENT_ROOT'].'/models/usersModel.php';

@@ -22,7 +22,8 @@ if (isset($_SESSION['user'])) {
     echo '</span>
     <a class="btn btn-danger" href="index.php?controller=users&action=cerrarsesion">Cerrar Sesion</a>
   </div>
-</nav>'; 
+</nav>
+</main>'; 
 }
 
 ?>

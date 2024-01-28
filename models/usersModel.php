@@ -20,7 +20,13 @@ class usersModel {
         $stmt->bindParam(1, $username);
         $stmt->bindParam(2, $pass);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($stmt->rowCount() == 1) {
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return false;
+        }
+       
     }
 
     /**

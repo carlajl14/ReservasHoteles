@@ -13,12 +13,12 @@ class hotelesView {
             echo '<h2 class="titulo">' . $hotel['nombre'] . '</h2>';
             echo '<div class="cont">';
             echo '<div class="imgBx">';
-            echo '<img class="img" src="data:image/jpeg; base64,'.base64_encode($hotel['foto']).'">';
+            echo '<img class="img" src="data:image/jpeg; base64,'.base64_encode($hotel['foto']).'" alt="hotel">';
             echo '</div>';
             echo '<div class="content">';
             echo '<p class="info">Dirección: '. $hotel['direccion'] .', '. $hotel['ciudad'] .' ('. $hotel['pais'] .')</p>';
             echo '<p class="info">Habitaciones disponibles: '. $hotel['num_habitaciones'] .'</p>'; 
-            echo '<p class="info">Descripcioón: '. $hotel['descripcion'] .'</p>'; 
+            echo '<p class="info">Descripción: '. $hotel['descripcion'] .'</p>'; 
             echo '<form method="POST" action="index.php?controller=habitaciones&action=mostrarHabitaciones">
             <input type="number" name="hotel" hidden value="'. $hotel['id'] .'"/>
             <button type="submit" name="info" class="btn btn-success">Habitaciones Disponibles</button>';

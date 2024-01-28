@@ -125,5 +125,6 @@ input {
 .date {
     position: absolute;
     color: white;
-    margin-top: 450px;
+    margin-top: -85px;
+    margin-left: 635px;
 }

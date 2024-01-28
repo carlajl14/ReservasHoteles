@@ -43,7 +43,7 @@ class habitacionesView {
             echo '<input type="number" name="habitacion" hidden value="'. $habitacion['id'] .'">';
             // Hotel
             echo '<input type="number" name="hotel" hidden value="'. $hotel .'">';
-            echo '<button type="submit" class="btn btn-success boton">Reservar</button>';
+            echo '<button type="submit" class="btn btn-success buton" style="width:98%; border-radius:10px">Reservar</button>';
             echo '</form>';
             echo '</div>';
             echo '</div>';

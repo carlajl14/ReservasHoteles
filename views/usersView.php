@@ -4,7 +4,7 @@ class usersView {
     /**
      * Mostrar el login y comprobar si hay error al verificar
      */
-    public function login($booleano = true) {
+    public function login($booleano) {
         echo '<div class="container">';
         echo '<div class="square">';
         echo '<i style="--clr:#00ff0a;"></i>';
@@ -15,20 +15,21 @@ class usersView {
         echo '<form method="POST" action="index.php?controller=users&action=verificarDatos">';
         echo '<div class="inputBX">';
         echo '<label>Usuario</label>';
-        echo '<input type="text" name="username" placeholder="Nombre de usuario" required">';
+        echo '<input type="text" name="username" placeholder="Nombre de usuario" required>';
         echo '</div>';
         echo '<div class="inputBX">';
         echo '<label>Contraseña</label>';
-        echo '<input type="password" name="pass" placeholder="Contraseña" required">';
+        echo '<input type="password" name="pass" placeholder="Contraseña" required>';
         echo '</div>';
         echo '<div class="inputBX">';
         echo '<button class="boton" type="submit" name="login">Iniciar Sesión</button>';
         //Comprobar si los datos son correctos
         if ($booleano == false) {
-            echo '<p class=text-white">Usuario o contraseña incorrectos</p>';
+            echo '<p class="text-white">Usuario o contraseña incorrectos</p>';
         }
         echo '</div>';
         echo '</form>';
+        echo '</div>';
         echo '</div>';
         echo '</div>';
 

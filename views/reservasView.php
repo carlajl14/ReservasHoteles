@@ -3,9 +3,8 @@
 class reservasView {
     /**
      * Modal para añadir una reserva
+     * @param type $reservas
      */
-
-
     public function mostrarReservas($reservas) {
         echo '<h1 class="text-center title">Tus Reservas</h1>';
         echo '<table class="table table-light tabla">';
@@ -22,12 +21,12 @@ class reservasView {
         echo '<tbody>';
         foreach ($reservas as $reserva) {
             echo '<tr>';
-            echo '<td scope="row">' . $reserva['nombre'] . '</td>';
-            echo '<td scope="row">' . $reserva['ciudad'] . '</td>';
-            echo '<td scope="row">' . $reserva['tipo'] . '</td>';
-            echo '<td scope="row">' . $reserva['descripcion'] . '</td>';
-            echo '<td scope="row">' . $reserva['fecha_entrada'] . '</td>';
-            echo '<td scope="row">' . $reserva['fecha_salida'] . '</td>';
+            echo '<td>' . $reserva['nombre'] . '</td>';
+            echo '<td>' . $reserva['ciudad'] . '</td>';
+            echo '<td>' . $reserva['tipo'] . '</td>';
+            echo '<td>' . $reserva['descripcion'] . '</td>';
+            echo '<td>' . $reserva['fecha_entrada'] . '</td>';
+            echo '<td>' . $reserva['fecha_salida'] . '</td>';
             echo '</tr>';
         }
         echo '</tbody>';
